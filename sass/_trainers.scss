@@ -1,0 +1,80 @@
+.trainers {
+  padding: 50px 0;
+  text-align: center;
+  &__h1 {
+    position: relative;
+    margin: 50px;
+    font-size: 2.5rem;
+    @include underscore;
+  }
+  &__p {
+    margin: 50px;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 35px;
+    margin: 0 5%;
+
+    &__trainer {
+      position: relative;
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: 1fr auto;
+      font-size: 1.4rem;
+      background-color: $font-color-white;
+
+      &__img {
+        display: block;
+        width: 100%;
+      }
+
+      &__description {
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        writing-mode: vertical-lr;
+        text-orientation: sideways;
+        justify-content: center;
+        align-items: center;
+        &__a {
+          text-decoration: none;
+          color: $font-color-black;
+          transition: $trs-time;
+
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+
+      &__socials {
+        padding: 2% 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        background-color: $font-color-white;
+
+        & i {
+          cursor: pointer;
+          transition: $trs-time;
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 740px) {
+  .trainers {
+    &__wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
