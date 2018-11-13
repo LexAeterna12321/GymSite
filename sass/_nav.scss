@@ -1,6 +1,5 @@
 .nav {
   color: $font-color-white;
-
   &--top {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -54,6 +53,10 @@
         width: 40px;
         margin: 4px 0;
         background: $font-color-black;
+        transition: $trs-time;
+      }
+      &:hover span {
+        margin: 2px 0;
       }
     }
   }
