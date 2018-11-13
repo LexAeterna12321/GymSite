@@ -1,0 +1,60 @@
+.nav {
+  color: $font-color-white;
+
+  &--top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    text-align: right;
+    justify-content: space-evenly;
+    background-color: $main-color;
+    padding: 10px 0;
+
+    &__socials {
+      display: flex;
+      margin: 0 10px;
+      justify-content: center;
+      border-left: 1px solid;
+
+      & i {
+        padding: 0 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  &--bottom {
+    display: grid;
+    padding: 20px 2% 20px 5%;
+    grid-template-columns: 3fr 1fr;
+    color: $font-color-black;
+
+    &__logo {
+      justify-self: start;
+      font-size: 2rem;
+      text-transform: uppercase;
+
+      & span {
+        font-size: 3.6rem;
+        color: $main-color;
+      }
+    }
+
+    &__nav-icon {
+      width: 100%;
+      height: 100%;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      & span {
+        display: block;
+        height: 3px;
+        width: 40px;
+        margin: 4px 0;
+        background: $font-color-black;
+      }
+    }
+  }
+}

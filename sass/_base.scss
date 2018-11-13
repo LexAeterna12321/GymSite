@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&subset=latin-ext");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Ubuntu", sans-serif;
+  font-style: 10px;
+}
