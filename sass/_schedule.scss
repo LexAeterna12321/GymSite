@@ -1,6 +1,7 @@
 .schedule {
   background-color: $font-color-black;
-
+  overflow: hidden;
+  padding: 0 0 50px 0;
   &__h1 {
     @include h1;
   }
@@ -46,6 +47,7 @@
         padding: 15px 20px;
       }
       &__item:nth-child(1) {
+        color: $main-color;
         font-size: 4rem;
       }
       &__item:nth-child(2) {

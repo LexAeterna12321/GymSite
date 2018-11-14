@@ -1,5 +1,4 @@
 const weekDays = document.querySelectorAll(".schedule__weekDays__day");
-console.log(weekDays);
 const days = [
   "Monday",
   "Tuesday",
@@ -16,3 +15,5 @@ const weekDaysHandler = () => {
 };
 
 window.addEventListener("resize", weekDaysHandler);
+
+weekDaysHandler();
