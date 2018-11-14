@@ -1,0 +1,59 @@
+.schedule {
+  background-color: $font-color-black;
+
+  &__h1 {
+    @include h1;
+  }
+
+  &__weekDays {
+    margin: 0 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    &__day {
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: $font-color-white;
+      cursor: pointer;
+      transition: $trs-time;
+
+      &:hover {
+        background-color: rgba(192, 58, 43, 0.664);
+      }
+      &--active {
+        background-color: $main-color;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 0 15px;
+    align-content: center;
+    text-align: center;
+
+    &__block {
+      display: grid;
+      justify-content: center;
+      border: 2px dashed rgba(0, 0, 0, 0.3);
+      color: $font-color-white;
+      font-size: 1.5rem;
+      &__item {
+        padding: 15px 20px;
+      }
+      &__item:nth-child(1) {
+        font-size: 4rem;
+      }
+      &__item:nth-child(2) {
+        background-color: $main-color;
+      }
+      &__item:nth-child(4) {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
