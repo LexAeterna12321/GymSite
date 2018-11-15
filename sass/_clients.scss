@@ -3,9 +3,10 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  margin: 0 10%;
+  margin: 5% 10%;
   text-align: center;
   overflow: hidden;
+  grid-template-rows: auto;
 
   &__h1 {
     @include h1;
@@ -18,9 +19,10 @@
     left: 0;
     display: grid;
     grid-template-columns: auto;
+
     justify-items: center;
     align-items: center;
-    grid-template-rows: repeat(2, 130px) 80px;
+
     transition: opacity 0.6s, left 1.5s cubic-bezier(0.13, 0.4, 0.36, 0.81);
     opacity: 0;
 
@@ -29,6 +31,7 @@
       height: 120px;
       border-radius: 50%;
       overflow: hidden;
+      margin: 10px 0;
 
       & img {
         display: block;
@@ -37,12 +40,14 @@
     }
 
     &__description {
+      margin: 10px 0;
       &__social {
         color: $main-color;
       }
     }
 
     &__text {
+      margin: 20px 0;
       align-self: start;
     }
   }
@@ -70,18 +75,18 @@
 
   &__controls {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 10%;
-    margin: 20px auto;
 
     &__control {
+      grid-row: 200px;
       display: block;
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background-color: #34495e58;
       cursor: pointer;
+      margin: 10px;
 
       &--active {
         background-color: $shadow-color;
