@@ -26,6 +26,7 @@
     padding: 10px 2% 10px 5%;
     grid-template-columns: 3fr 1fr;
     color: $font-color-black;
+    overflow: hidden;
 
     &__logo {
       justify-self: start;
@@ -83,7 +84,7 @@
   }
   50% {
     top: 10px;
-    left: -40px;
+    left: -30px;
     transform: rotate(45deg);
   }
   100% {
@@ -106,7 +107,7 @@
   }
   50% {
     top: -10px;
-    left: 40px;
+    left: 30px;
     transform: rotate(-45deg);
   }
   100% {

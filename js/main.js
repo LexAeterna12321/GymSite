@@ -15,7 +15,7 @@ document
       navBars[2].classList.remove("nav--bottom__nav-icon--bottom--active");
     }
   });
-//
+// schedule functionality
 const weekDays = document.querySelectorAll(".schedule__weekDays__day");
 const days = [
   "Monday",
@@ -31,10 +31,30 @@ const weekDaysHandler = () => {
     ? weekDays.forEach((day, index) => (day.textContent = days[index][0]))
     : weekDays.forEach((day, index) => (day.textContent = days[index]));
 };
-
 window.addEventListener("resize", weekDaysHandler);
-
 weekDaysHandler();
+
+// classes animation functionality
+const classBlocks = document.querySelectorAll(".schedule__wrapper__block");
+const classDays = document.querySelectorAll(".schedule__weekDays__day");
+classDays.forEach(day => {
+  day.addEventListener("click", e => {
+    classDays.forEach(day =>
+      day.classList.remove("schedule__weekDays__day--active")
+    );
+
+    classBlocks.forEach(block => {
+      block.animate(
+        [
+          { transform: "translateY(-5px)", opacity: 0 },
+          { transform: "translateY(0px)", opacity: 1 }
+        ],
+        { duration: 750 }
+      );
+    });
+    e.target.classList.add("schedule__weekDays__day--active");
+  });
+});
 
 //  clients sections dots handler
 
