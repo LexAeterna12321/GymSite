@@ -1,3 +1,21 @@
+// Nav
+const navBars = document.querySelectorAll(".nav--bottom__nav-icon span");
+let navActive = false;
+document
+  .querySelector(".nav--bottom__nav-icon")
+  .addEventListener("click", () => {
+    navActive = !navActive;
+    if (navActive) {
+      navBars[0].classList.add("nav--bottom__nav-icon--top--active");
+      navBars[1].classList.add("nav--bottom__nav-icon--middle--active");
+      navBars[2].classList.add("nav--bottom__nav-icon--bottom--active");
+    } else {
+      navBars[0].classList.remove("nav--bottom__nav-icon--top--active");
+      navBars[1].classList.remove("nav--bottom__nav-icon--middle--active");
+      navBars[2].classList.remove("nav--bottom__nav-icon--bottom--active");
+    }
+  });
+//
 const weekDays = document.querySelectorAll(".schedule__weekDays__day");
 const days = [
   "Monday",

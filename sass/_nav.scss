@@ -48,7 +48,19 @@
       align-items: center;
       cursor: pointer;
 
+      &--top--active {
+        animation: navActive--top 1s both;
+      }
+      &--middle--active {
+        animation: navActive--middle 0.5s both;
+      }
+      &--bottom--active {
+        animation: navActive--bottom 1s both;
+      }
+
       & span {
+        left: 0;
+        position: relative;
         display: block;
         height: 3px;
         width: 40px;
@@ -56,9 +68,50 @@
         background: $font-color-black;
         transition: $trs-time;
       }
+
       &:hover span {
-        margin: 2px 0;
+        background-color: $main-color;
       }
     }
+  }
+}
+
+@keyframes navActive--top {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  50% {
+    top: 10px;
+    left: -40px;
+    transform: rotate(45deg);
+  }
+  100% {
+    top: 10px;
+    left: 0;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes navActive--middle {
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+@keyframes navActive--bottom {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  50% {
+    top: -10px;
+    left: 40px;
+    transform: rotate(-45deg);
+  }
+  100% {
+    top: -10px;
+    left: 0;
+    transform: rotate(-45deg);
   }
 }
