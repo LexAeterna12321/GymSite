@@ -1,0 +1,34 @@
+.promo {
+  text-align: center;
+  height: 700px;
+  background-image: url("../img/promoImg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 5%;
+
+  & > * {
+    color: $font-color-white;
+    padding: 45px 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+  &__h1 {
+    font-size: 2.6rem;
+  }
+  &__p {
+    color: $font-color-black;
+    margin-bottom: 60px;
+    &__span {
+      color: $main-color;
+      font-size: 4.2rem;
+      font-weight: 700;
+    }
+  }
+  &__button {
+    @include button($font-color-white, $main-color);
+  }
+}
