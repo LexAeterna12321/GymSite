@@ -18,13 +18,13 @@ document
 // schedule functionality
 const weekDays = document.querySelectorAll(".schedule__weekDays__day");
 const days = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday",
-  "Sunday"
+  "Saturday"
 ];
 const weekDaysHandler = () => {
   window.innerWidth <= 700
@@ -37,6 +37,10 @@ weekDaysHandler();
 // classes animation functionality
 const classBlocks = document.querySelectorAll(".schedule__wrapper__block");
 const classDays = document.querySelectorAll(".schedule__weekDays__day");
+// sets active class on current day
+let nowActive = new Date().getDay();
+classDays[nowActive].classList.add("schedule__weekDays__day--active");
+//
 classDays.forEach(day => {
   day.addEventListener("click", e => {
     classDays.forEach(day =>
