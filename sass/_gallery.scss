@@ -17,7 +17,7 @@
   &__wrapper {
     padding: 35px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 280px));
+    grid-template-columns: repeat(auto-fill, 300px);
     grid-auto-rows: 280px;
     grid-gap: 15px;
     justify-content: center;
@@ -27,6 +27,7 @@
     overflow: hidden;
     border: 2px dashed rgba(0, 0, 0, 0.3);
     &__img {
+      object-fit: cover;
       display: block;
       overflow: hidden;
       width: 100%;
