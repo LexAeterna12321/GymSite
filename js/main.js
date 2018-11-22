@@ -1,6 +1,7 @@
 // Nav
 const navBars = document.querySelectorAll(".nav--bottom__nav-icon span");
 let navActive = false;
+const navList = document.querySelector(".nav--bottom__items");
 document
   .querySelector(".nav--bottom__nav-icon")
   .addEventListener("click", () => {
@@ -9,10 +10,12 @@ document
       navBars[0].classList.add("nav--bottom__nav-icon--top--active");
       navBars[1].classList.add("nav--bottom__nav-icon--middle--active");
       navBars[2].classList.add("nav--bottom__nav-icon--bottom--active");
+      navList.classList.add("nav--bottom__items--active");
     } else {
       navBars[0].classList.remove("nav--bottom__nav-icon--top--active");
       navBars[1].classList.remove("nav--bottom__nav-icon--middle--active");
       navBars[2].classList.remove("nav--bottom__nav-icon--bottom--active");
+      navList.classList.remove("nav--bottom__items--active");
     }
   });
 // schedule functionality
@@ -78,3 +81,9 @@ function viewHandler() {
 }
 
 dots.forEach(dot => dot.addEventListener("click", viewHandler));
+
+// header section position adjustment
+
+const header = document.querySelector("header.header");
+header.style.paddingTop =
+  document.querySelector("nav.nav").getBoundingClientRect().height + "px";
