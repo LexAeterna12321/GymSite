@@ -19,10 +19,8 @@
     left: 0;
     display: grid;
     grid-template-columns: auto;
-
     justify-items: center;
     align-items: center;
-
     transition: opacity 0.6s, left 1.5s cubic-bezier(0.13, 0.4, 0.36, 0.81);
     opacity: 0;
 
@@ -63,7 +61,7 @@
     position: relative;
     height: 0;
     top: 0;
-    left: 100%;
+    left: 200%;
   }
 
   &__client--active {
@@ -71,6 +69,9 @@
     opacity: 1;
     left: 0;
     top: 0;
+  }
+  &__client--drag {
+    cursor: grabbing;
   }
 
   &__controls {

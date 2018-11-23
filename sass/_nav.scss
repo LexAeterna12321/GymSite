@@ -32,7 +32,6 @@
     padding: 10px 2% 10px 5%;
     grid-template-columns: 5fr 1fr;
     color: $font-color-black;
-    overflow: hidden;
     &__logo {
       justify-self: start;
       font-size: 2rem;
@@ -90,6 +89,27 @@
         &:hover::after {
           width: 100%;
         }
+        // popup
+        &:hover &__popUp {
+          visibility: visible;
+          opacity: 1;
+          max-height: 1000px;
+        }
+        &__popUp {
+          visibility: hidden;
+          position: absolute;
+          max-height: 0;
+          opacity: 0;
+          transition: $trs-time;
+          right: 120%;
+          top: calc(100% - 1.2rem);
+          width: 100px;
+          padding: 5px;
+          text-align: center;
+          background-color: $font-color-white;
+          color: $font-color-black;
+          border-radius: 10px;
+        }
       }
     }
     &__nav-icon {
@@ -124,6 +144,21 @@
         background-color: $main-color;
       }
     }
+  }
+  &__arrow {
+    display: block;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    color: $font-color-white;
+    font-size: 1.7rem;
+    cursor: pointer;
   }
 }
 @keyframes navActive--top {
@@ -169,6 +204,7 @@
     &--bottom {
       grid-template-columns: 3fr 5fr 1fr;
       &__items {
+        padding: 0;
         width: 100%;
         background: transparent;
         position: initial;
@@ -178,6 +214,18 @@
         &__item {
           &::after {
             bottom: -10px;
+          }
+          &:hover &__popUp {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+          }
+          &__popUp {
+            width: 200px;
+            right: 50%;
+            padding: 20px;
+            top: calc(100% + 2.4rem);
+            transform: translateX(50%);
           }
         }
       }

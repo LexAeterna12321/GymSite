@@ -18,6 +18,22 @@ document
       navList.classList.remove("nav--bottom__items--active");
     }
   });
+
+// nav scroll btns
+
+navBtns = document.querySelectorAll(
+  "[data-item=header],[data-item=trainers],[data-item=offer]"
+);
+navBtns.forEach(btn => {
+  btn.addEventListener("click", function() {
+    const { item } = this.dataset;
+    window.scrollTo({
+      behavior: "smooth",
+      top: document.querySelector(`.${item}`).offsetTop
+    });
+  });
+});
+
 // schedule functionality
 const weekDays = document.querySelectorAll(".schedule__weekDays__day");
 const days = [
@@ -76,6 +92,7 @@ function viewHandler() {
     client.style.left = `100%`;
   });
   clients[this.dataset.client].classList.add("clients__client--active");
+
   clients[this.dataset.client].style.left = 0;
   this.classList.add("clients__controls__control--active");
 }
@@ -87,3 +104,20 @@ dots.forEach(dot => dot.addEventListener("click", viewHandler));
 const header = document.querySelector("header.header");
 header.style.paddingTop =
   document.querySelector("nav.nav").getBoundingClientRect().height + "px";
+
+// toTop arrow button
+
+const arrow = document.querySelector(".nav__arrow");
+const aboutSection = document.querySelector(".about");
+
+const scrollCheck = () => {
+  window.scrollY >= aboutSection.offsetTop
+    ? (arrow.style.visibility = "visible")
+    : (arrow.style.visibility = "hidden");
+};
+
+arrow.addEventListener("click", () => {
+  window.scrollTo({ behavior: "smooth", top: header.offsetTop });
+});
+
+window.addEventListener("scroll", scrollCheck);
